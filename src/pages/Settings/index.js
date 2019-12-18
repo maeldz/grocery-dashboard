@@ -130,19 +130,19 @@ export default function Settings() {
                 </div>
               </div>
             </div>
-            <button className="btn btn-primary btn-block" type="submit">
-              {loading ? (
-                <Animation width={30} height={30} animation={loadingData} />
-              ) : (
-                translate('save_button')
-              )}
-            </button>
             <button
               onClick={clearCache}
               className="btn btn-danger btn-block"
               type="button"
             >
               {translate('clear_cache_button')}
+            </button>
+            <button className="btn btn-primary btn-block" type="submit">
+              {loading ? (
+                <Animation width={30} height={30} animation={loadingData} />
+              ) : (
+                translate('save_button')
+              )}
             </button>
           </Form>
         </div>
