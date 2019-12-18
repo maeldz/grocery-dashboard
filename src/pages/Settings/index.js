@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
+import { toast } from 'react-toastify';
 
 import translate from '../../locales';
 import Animation from '../../components/Animation';
@@ -20,29 +21,57 @@ export default function Settings() {
   const [haveSavedSettings, setHaveSavedSettings] = useState(true);
   const [settings, setSettings] = useState({});
 
+  async function clearCache() {
+    try {
+      await api.get('invalidate/all');
+      toast.success(translate('cache_clear_success'));
+    } catch (err) {
+      if (err.response) {
+        toast.error(translate('server_error'));
+      } else {
+        toast.error(translate('server_connection_error'));
+      }
+    }
+  }
+
   async function handleSubmit(data) {
     setLoading(true);
-    if (haveSavedSettings) {
-      await api.put('settings', {
-        delivery_fee: `[${data.deliveryFee},${data.minimumOrderValue}]`,
-      });
-    } else {
-      await api.post('settings', {
-        delivery_fee: `[${data.deliveryFee},${data.minimumOrderValue}]`,
-      });
+    try {
+      if (haveSavedSettings) {
+        await api.put('settings', {
+          delivery_fee: `[${data.deliveryFee},${data.minimumOrderValue}]`,
+        });
+      } else {
+        await api.post('settings', {
+          delivery_fee: `[${data.deliveryFee},${data.minimumOrderValue}]`,
+        });
+      }
+      toast.success(translate('settings_updated_success'));
+      setLoading(false);
+    } catch (err) {
+      if (err.response) {
+        toast.error(translate('server_error'));
+        setLoading(false);
+      } else {
+        toast.error(translate('server_connection_error'));
+        setLoading(false);
+      }
     }
-    setLoading(false);
   }
 
   useEffect(() => {
     async function loadSettings() {
       const response = await api.get('settings');
 
-      const defaultValues = { deliveryFee: 0, minimumOrderValue: 0 };
+      const defaultValues = {
+        deliveryFee: 0,
+        minimumOrderValue: 0,
+      };
 
       if (response.data.length) {
-        const deliveryFee = response.data[0].delivery_fee
-          ? JSON.parse(response.data[0].delivery_fee)
+        const data = response.data[0];
+        const deliveryFee = data.delivery_fee
+          ? JSON.parse(data.delivery_fee)
           : [0, 0];
 
         setSettings({
@@ -107,6 +136,13 @@ export default function Settings() {
               ) : (
                 translate('save_button')
               )}
+            </button>
+            <button
+              onClick={clearCache}
+              className="btn btn-danger btn-block"
+              type="button"
+            >
+              {translate('clear_cache_button')}
             </button>
           </Form>
         </div>

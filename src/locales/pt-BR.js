@@ -89,6 +89,7 @@ export default {
   clear_button: 'LIMPAR',
   save_button: 'SALVAR',
   login_button: 'LOGIN',
+  clear_cache_button: 'LIMPAR CACHE DA APLICAÇÃO',
 
   // TABLES
   category_id_column: 'Id',
@@ -258,4 +259,6 @@ export default {
   product_removed_success: 'Produto removido com sucesso',
   profile_updated_success: 'Perfil atualizado com sucesso',
   status_updated_success: 'Status alterado com sucesso',
+  settings_updated_success: 'As configurações foram altualizadas com sucesso',
+  cache_clear_success: 'O cache da aplicação foi limpo com sucesso',
 };

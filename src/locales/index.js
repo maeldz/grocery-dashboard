@@ -11,7 +11,10 @@ I18n.translations = {
 };
 
 // your language
-export const locale = 'en_US';
+export const locale = (navigator.language || navigator.userLanguage).replace(
+  '-',
+  '_',
+);
 
 const dateLanguages = { pt_BR, en_US };
 

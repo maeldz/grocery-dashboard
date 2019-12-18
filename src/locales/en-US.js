@@ -89,6 +89,7 @@ export default {
   clear_button: 'CLEAR',
   save_button: 'SAVE',
   login_button: 'LOGIN',
+  clear_cache_button: 'CLEAR APP CACHE',
 
   // TABLES
   category_id_column: 'Id',
@@ -259,4 +260,6 @@ export default {
   product_removed_success: 'Product successfully removed',
   profile_updated_success: 'Profile updated successfully',
   status_updated_success: 'Status changed successfully',
+  settings_updated_success: 'Settings have been updated successfully',
+  cache_clear_success: 'Application cache has been cleared',
 };
