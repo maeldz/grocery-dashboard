@@ -18,17 +18,23 @@ export default function Orders() {
   const [value, setValue] = useState({});
 
   async function handleChange(event) {
+    const status = event.target.value;
+    const orderId = event.target.id;
     setValue({
-      id: Number(event.target.id),
-      status: event.target.value,
+      id: Number(orderId),
+      status,
     });
 
-    if (event.target.value !== '') {
-      setUpdatingStatus(event.target.id);
+    if (status !== '') {
+      setUpdatingStatus(orderId);
       try {
-        await api.put(`/orders/${event.target.id}`, {
-          status: event.target.value,
+        await api.put(`/orders/${orderId}`, {
+          status,
         });
+
+        if (status === 'cancelled') {
+          await api.delete(`/orders/${orderId}`);
+        }
 
         setRender(!render);
       } catch (err) {
