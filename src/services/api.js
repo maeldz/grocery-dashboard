@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://groceryapi.tk',
+  baseURL: 'https://groceryapi.tk',
 });
 
 export default api;
