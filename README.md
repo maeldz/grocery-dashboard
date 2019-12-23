@@ -1,6 +1,7 @@
 ## Screenshots
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/maeldz/grocery-dashboard-reactjs.svg)](https://greenkeeper.io/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/826cd970-3067-4ba5-af9b-7c0d13fbc3d4/deploy-status)](https://app.netlify.com/sites/naughty-fermat-d83fe5/deploys)
 
 <p align="center">
 <img width="20%" src="https://user-images.githubusercontent.com/54718471/71130723-726f4e00-21d1-11ea-8399-15e08eb71019.png"><img width="20%" src="https://user-images.githubusercontent.com/54718471/71129913-579bda00-21cf-11ea-8f87-0706b57e2307.png">
