@@ -6,7 +6,7 @@
     "@rocketseat/unform": "^1.6.1",
     "axios": "^0.19.0",
     "currency-formatter": "^1.5.5",
-    "date-fns": "^2.6.0",
+    "date-fns": "^2.9.0",
     "history": "^4.10.1",
     "i18n-js": "^3.5.0",
     "immer": "^5.1.0",
