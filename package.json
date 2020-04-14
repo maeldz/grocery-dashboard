@@ -10,7 +10,7 @@
     "history": "^4.10.1",
     "i18n-js": "^3.5.0",
     "immer": "^5.1.0",
-    "mdbreact": "^4.22.0",
+    "mdbreact": "^4.25.6",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-datepicker": "^2.9.6",
