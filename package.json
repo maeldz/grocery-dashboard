@@ -8,7 +8,7 @@
     "currency-formatter": "^1.5.5",
     "date-fns": "^2.6.0",
     "history": "^4.10.1",
-    "i18n-js": "^3.5.0",
+    "i18n-js": "^3.7.0",
     "immer": "^5.1.0",
     "mdbreact": "^4.22.0",
     "prop-types": "^15.7.2",
