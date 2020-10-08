@@ -1,7 +1,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/maeldz/grocery-dashboard-reactjs.svg)](https://greenkeeper.io/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/826cd970-3067-4ba5-af9b-7c0d13fbc3d4/deploy-status)](https://app.netlify.com/sites/naughty-fermat-d83fe5/deploys)
 
-# :watermelon: grocery-admin-dashboard
+# :watermelon: grocery-dashboard
 
 ## :computer: Preview
 
